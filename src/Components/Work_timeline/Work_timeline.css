@@ -1,0 +1,14 @@
+.vertical-timeline::before {
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+}
+
+.vertical-timeline-element-subtitle {
+    color: #6b7280;
+}
+
+.vertical-timeline-element .vertical-timeline-element-date {
+    font-weight: 900;
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+    color: #e0f7fa;
+}

@@ -1,0 +1,115 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #000005;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    background-color: #000005;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-header {
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.nav-links a, .nav-links button {
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s;
+    font-weight: bold;
+    color: #fefefe;
+    border: none;
+    background: none;
+    font-size: large;
+}
+
+.nav-links a:hover, .nav-links .active, .nav-links button:hover {
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav .menu {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+}
+
+nav .menu span {
+    height: 0.4rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.2rem;
+}
+
+@media (max-width: 720px) {
+    nav .menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .open-nav-links {
+        width: 100%;
+        text-align: left;
+        flex-direction: column;
+        display: flex;
+        list-style: none;
+        margin-top: 5%;
+        font-weight: bold;
+        font-size: large;
+    }
+
+    .open-nav-links a, .open-nav-links button {
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        transition: color 0.3s;
+        border: none;
+        background: none;
+        font-size: large;
+    }
+
+    .open-nav-links li {
+        margin: 1%;
+    }
+
+    .open-nav-links a:hover, .open-nav-links .active, .open-nav-links button:hover {
+        background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .open-menu {
+        height: 0.4rem;
+        width: 100%;
+        background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+        border-radius: 0.2rem;
+    }
+}

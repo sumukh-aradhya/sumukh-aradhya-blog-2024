@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #000005;
+    position: fixed;
+    top: 1%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    background-color: #000005;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-header {
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links .active {
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
