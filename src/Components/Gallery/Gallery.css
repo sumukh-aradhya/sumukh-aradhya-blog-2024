@@ -1,0 +1,46 @@
+.container {
+margin: auto;
+}
+
+.gallery_img {
+max-width: 100%;
+transition: filter 0.3s ease;
+
+}
+
+.img-grid {
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+grid-gap: 5px;
+}
+
+@media only screen and (min-width: 720px) {
+.img-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media only screen and (min-width: 970px) {
+.img-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+}
+
+.gallery-h2 {
+    color: #e0f7fa;
+  font-family: 'Bebas Neue';
+  font-weight: bolder;
+  letter-spacing: 5px;
+  font-size: 230%;
+  text-align: center;
+}
+
+.overlay-text {
+    color: #e0f7fa;
+}
+
+.overlay-text-p {
+    font-size: small;
+    color: #6b7280;
+}
+  

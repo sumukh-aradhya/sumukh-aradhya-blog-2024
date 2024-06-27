@@ -4,12 +4,9 @@ import NavbarNew from '../Navbar/Navbar_new';
 import viralSrc from '../../assets/images/viral.png';
 import sumukh from '../../assets/images/sumukh.jpg';
 import dog from '../../assets/images/dog.png';
-import rl from '../../assets/images/RL.png';
-import gan from '../../assets/images/gan.png';
-import gnn from '../../assets/images/gnn.png';
-import mentality from '../../assets/images/mentality.png';
 import WorkTimelineComponent from '../Work_timeline/Work_timeline';
 import EduTimelineComponent from '../Edu_timeline/Edu_timeline';
+import GalleryComponent from '../Gallery/Gallery';
 
 function Home() {
     const [isVisible, setIsVisible] = useState(true);
@@ -159,6 +156,14 @@ function Home() {
         <div className='edu-timeline' id='edu-timeline'>
           <h2 className='edu-timeline-h2'>EDUCATION</h2>
           <EduTimelineComponent /> 
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div>
+          <GalleryComponent /> 
         </div>
 
         <div class="footer">
