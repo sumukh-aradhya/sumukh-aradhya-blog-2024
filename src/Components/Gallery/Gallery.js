@@ -8,6 +8,10 @@ import deathvalley2 from '../../assets/images/dv2.JPEG';
 import deathvalley3 from '../../assets/images/dv3.JPEG';
 import arizona from '../../assets/images/ari.JPEG';
 import cresent from '../../assets/images/cresent.JPEG';
+import sf from '../../assets/images/sf.JPEG';
+import sj from '../../assets/images/sj.JPEG';
+import reyes from '../../assets/images/ptreyes.JPEG';
+import mile from '../../assets/images/17mile.JPEG';
 
 function GalleryComponent() {
   return (
@@ -45,6 +49,22 @@ function GalleryComponent() {
         <div class="image-container">
             <img className='gallery_img' src={arizona} alt="Arizona" />
             <span class="overlay-text">Tempe <span className='overlay-text-p'>Arizona</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={sf} alt="San Francisco" />
+            <span class="overlay-text">Golden Gate Bridge <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={sj} alt="San Jose" />
+            <span class="overlay-text">San Jose <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={mile} alt="17 Mile Drive" />
+            <span class="overlay-text">17 Mile Drive <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={reyes} alt="Point Reyes" />
+            <span class="overlay-text">Point Reyes <span className='overlay-text-p'>California</span></span>
         </div>
     </div>
 </div>
