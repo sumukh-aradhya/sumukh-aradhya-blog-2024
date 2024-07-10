@@ -22,7 +22,7 @@ function WorkTimelineComponent() {
           <h5 className="vertical-timeline-element-subtitle">Milpitas, California</h5>
           <p>
             <ul>
-              <li>Development and optimization of models to consolidate ~80 attribute models into a single, efficient model</li>
+              <li>Assisting with development and optimization of models to consolidate ~80 attribute models into a single, efficient model</li>
               <li>Creating a model to remove furniture from an inspiration image and replace it with Inhabitr furniture</li>
               <li>Conducting thorough bug fixes and comprehensive data analysis on existing models and databases to improve system reliability and accuracy</li>
             </ul>
