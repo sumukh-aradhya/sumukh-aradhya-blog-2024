@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from 'react';
 import './Home.css';
 import NavbarNew from '../Navbar/Navbar_new';
 import viralSrc from '../../assets/images/viral.png';
-import sumukh from '../../assets/images/sumukh.jpg';
+import sumukh from '../../assets/images/sumukh_home.JPG';
 import dog from '../../assets/images/dog.png';
 import WorkTimelineComponent from '../Work_timeline/Work_timeline';
 import EduTimelineComponent from '../Edu_timeline/Edu_timeline';
@@ -84,7 +84,7 @@ function Home() {
               <img src={sumukh} className="card-image-about" />
               <div className="card-text-about">
                 <h2 className="h2-card-text-about">OVERVIEW</h2>
-                <p className="p-card-text-about">I am a technology enthusiast currently pursuing Masters in Computer Science at San Jose State University. I am a skilled Machine Learning Engineer currently honing my skills as an intern at Inhabitr Inc., in Milpitas, California. Passionate about innovation, I am always eager to meet new people, collaborate, learn and work on new ideas in the realm of AI and Machine Learning.</p>
+                <p className="p-card-text-about">I am a technology enthusiast currently pursuing Masters in Computer Science at San Jose State University. I am a skilled Machine Learning Engineer, recently gaining valuable experience during my internship at Inhabitr Inc., in Milpitas, California. Passionate about innovation, I am always eager to meet new people, collaborate, learn and work on new ideas in the realm of AI and Machine Learning.</p>
                 <h5 className='p-card-text-about-addn-details'>
                   San Jose, California
                 </h5>
