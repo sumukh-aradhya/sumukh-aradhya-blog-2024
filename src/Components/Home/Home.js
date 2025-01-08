@@ -167,7 +167,7 @@ function Home() {
         </div>
 
         <div class="footer">
-          <p><b>© Sumukh Naveen Aradhya.</b> All Rights Reserved, 2024</p>
+          <p><b>© Sumukh Naveen Aradhya.</b> All Rights Reserved, 2025</p>
         </div>
         </> 
     );
