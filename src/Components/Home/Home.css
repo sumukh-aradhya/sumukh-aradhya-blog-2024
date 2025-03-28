@@ -132,9 +132,10 @@ body {
 }
 
 .card-image-about {
+    margin-top: 5%;
     width: 40%;
-    height: auto;
-    border-radius: 10px;
+    height: 80%;
+    border-radius: 250px;
     object-fit: cover;
 }
 
