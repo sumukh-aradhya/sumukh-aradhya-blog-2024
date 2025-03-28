@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from 'react';
 import './Home.css';
 import NavbarNew from '../Navbar/Navbar_new';
 import viralSrc from '../../assets/images/viral.png';
-import sumukh from '../../assets/images/sumukh_home.JPG';
+import sumukh from '../../assets/images/profile-pic.jpg';
 import dog from '../../assets/images/dog.png';
 import WorkTimelineComponent from '../Work_timeline/Work_timeline';
 import EduTimelineComponent from '../Edu_timeline/Edu_timeline';
