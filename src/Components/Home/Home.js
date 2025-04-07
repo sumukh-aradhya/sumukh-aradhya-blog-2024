@@ -7,6 +7,10 @@ import dog from '../../assets/images/dog.png';
 import WorkTimelineComponent from '../Work_timeline/Work_timeline';
 import EduTimelineComponent from '../Edu_timeline/Edu_timeline';
 import GalleryComponent from '../Gallery/Gallery';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 
 function Home() {
     const [isVisible, setIsVisible] = useState(true);
@@ -63,6 +67,16 @@ function Home() {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('sumukhnaveenaradhya@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Hide after 2 seconds
+  };
+
+
     return (
         <>
         <div className="home-container">
@@ -88,6 +102,20 @@ function Home() {
                 <h5 className='p-card-text-about-addn-details'>
                   San Jose, California
                 </h5>
+                {/* Social Icons with Font Awesome */}
+                <div className="social-icons">
+                  <a href="https://www.linkedin.com/in/sumukh-n-aradhya" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
+                  </a>
+                  <a href="https://github.com/sumukh-aradhya" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faGithub} className="social-icon" />
+                  </a>
+                  <span onClick={handleCopyEmail} className="social-icon email-icon" title="Copy email">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </span>
+                </div>
+                {/* Copied Message */}
+                {copied && <p className="copied-message">Email copied!</p>}
               </div>
           </div>
         </div>
