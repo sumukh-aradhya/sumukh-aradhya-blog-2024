@@ -10,6 +10,7 @@ import GalleryComponent from '../Gallery/Gallery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import supabase from '../../supabaseClient';
 
 
 function Home() {
@@ -75,6 +76,44 @@ function Home() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Hide after 2 seconds
   };
+
+  const [visitCount, setVisitCount] = useState(null);
+  useEffect(() => {
+    const logVisit = async () => {
+      try {
+        await supabase.from('visits').insert([
+          {
+            ip: window?.location?.hostname, // rough proxy
+            user_agent: navigator.userAgent
+          }
+        ]);
+      } catch (error) {
+        console.error('Visit logging failed:', error);
+      }
+    };
+  
+    logVisit();
+  }, []);
+  
+
+  useEffect(() => {
+    const getVisitCount = async () => {
+      const { count, error } = await supabase
+        .from('visits')
+        .select('*', { count: 'exact', head: true });
+
+      if (error) {
+        console.error('Failed to fetch visit count:', error);
+      } else {
+        setVisitCount(count);
+        console.log('Visit count response:', count, error);
+      }
+    };
+
+    getVisitCount();
+  }, []);
+
+
 
 
     return (
@@ -194,7 +233,9 @@ function Home() {
           <GalleryComponent /> 
         </div>
 
+
         <div class="footer">
+          <p>Bots and brains that've scrolled this far: {visitCount}</p>
           <p><b>© Sumukh Naveen Aradhya.</b> All Rights Reserved, 2025</p>
         </div>
         </> 
