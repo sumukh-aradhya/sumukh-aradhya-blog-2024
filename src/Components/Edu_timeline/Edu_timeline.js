@@ -21,7 +21,34 @@ function EduTimelineComponent() {
           <h4 className="vertical-timeline-element-subtitle">San Jose State University</h4>
           <h5 className="vertical-timeline-element-subtitle">San Jose, California</h5>
           <p>
-            <b>Related Coursework:</b> Data Structures and Algorithms, Database System Principles, Topics in Machine Learning, Topics in Artificial Intelligence, Machine Learning on Graphs
+            <b>Coursework:</b> 
+            <ul>
+              <li>Fall 2023 (Semester 1):
+                <ul>
+                  <li>Design and Analysis of Algorithms</li>
+                  <li>Database System Principles</li>
+                </ul>
+              </li>
+              <li>Spring 2024 (Semester 2):
+                <ul>
+                  <li>Topics in Machine Learning</li>
+                  <li>Machine Learning on Graphs</li>
+                  <li>Topics in Artificial Intelligence</li>
+                </ul>
+              </li>
+              <li>Fall 2024 (Semester 3):
+                <ul>
+                  <li>Introduction to Computer Vision</li>
+                  <li>Advanced Parallel Processing</li>
+                </ul>
+              </li>
+              <li>Spring 2025 (Semester 4):
+                <ul>
+                  <li>Topics in Natural Language Processing</li>
+                </ul>
+              </li>
+            </ul>
+
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement

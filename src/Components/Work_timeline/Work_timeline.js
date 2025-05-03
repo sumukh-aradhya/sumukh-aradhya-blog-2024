@@ -4,11 +4,29 @@ import 'react-vertical-timeline-component/style.min.css';
 import './Work_timeline.css';
 import Inhabitr from '../../assets/images/inhabitr2.jpg';
 import Zebra from '../../assets/images/zebra2.jpg';
+import SJSU from '../../assets/images/sjsu.png';
 
 function WorkTimelineComponent() {
   return (
     <div>
       <VerticalTimeline>
+      <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: '#11181f', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
+          date="June 2024 - present"
+          icon={<img className='logo-work-timeline' src={SJSU} alt="Custom Icon" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
+          iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        >
+          <h3 className="vertical-timeline-element-title">Graduate Student Assistant</h3>
+          <h4 className="vertical-timeline-element-subtitle">San Jose State University</h4>
+          <h5 className="vertical-timeline-element-subtitle">San Jose, California</h5>
+          <p>
+            <ul>
+              <li>Assisting Prof. Wendy Lee with an undergrad course <br />CS 122: Advanced Programming with Python</li>
+            </ul>
+          </p>
+        </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#11181f', color: '#fff' }}

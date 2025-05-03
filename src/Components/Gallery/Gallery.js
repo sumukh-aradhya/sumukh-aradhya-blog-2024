@@ -12,6 +12,14 @@ import sf from '../../assets/images/sf.JPEG';
 import sj from '../../assets/images/sj.JPEG';
 import reyes from '../../assets/images/ptreyes.JPEG';
 import mile from '../../assets/images/17mile.JPEG';
+import malay from '../../assets/images/malay.jpg';
+import oregon from '../../assets/images/oregon.jpg';
+import sandiego from '../../assets/images/sandiego.jpg';
+import mcway from '../../assets/images/mcway.jpg';
+import bixby from '../../assets/images/bixby.jpg';
+import tiburon from '../../assets/images/tiburon.jpg';
+import inverness from '../../assets/images/inverness.jpg';
+import lavabeds from '../../assets/images/lavabeds.jpg';
 
 function GalleryComponent() {
   return (
@@ -65,6 +73,38 @@ function GalleryComponent() {
         <div class="image-container">
             <img className='gallery_img' src={reyes} alt="Point Reyes" />
             <span class="overlay-text">Point Reyes <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={malay} alt="Malaysia" />
+            <span class="overlay-text">Kilim Geoforest Park <span className='overlay-text-p'>Malaysia</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={oregon} alt="Oregon" />
+            <span class="overlay-text">Manzanita Lake <span className='overlay-text-p'>Oregon</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={sandiego} alt="San Diego" />
+            <span class="overlay-text">Torrey Pines Reserve <span className='overlay-text-p'>San Diego</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={mcway} alt="McWay" />
+            <span class="overlay-text">McWay Falls <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={bixby} alt="Bixby" />
+            <span class="overlay-text">Bixby Bridge <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={tiburon} alt="Tiburon" />
+            <span class="overlay-text">Belvedere Tiburon <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={inverness} alt="Inverness" />
+            <span class="overlay-text">Inverness <span className='overlay-text-p'>California</span></span>
+        </div>
+        <div class="image-container">
+            <img className='gallery_img' src={lavabeds} alt="Lava Beds" />
+            <span class="overlay-text">Lava Beds National Monument <span className='overlay-text-p'>California</span></span>
         </div>
     </div>
 </div>
