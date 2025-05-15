@@ -14,7 +14,7 @@ function WorkTimelineComponent() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#11181f', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
-          date="June 2024 - present"
+          date="Feb 2025 - May 2025"
           icon={<img className='logo-work-timeline' src={SJSU} alt="Custom Icon" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
           iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
@@ -31,7 +31,7 @@ function WorkTimelineComponent() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#11181f', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
-          date="June 2024 - present"
+          date="Jun 2024 - Aug 2024"
           icon={<img className='logo-work-timeline' src={Inhabitr} alt="Custom Icon" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
           iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
@@ -50,7 +50,7 @@ function WorkTimelineComponent() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#11181f', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
-          date="Dec 2021 - July 2023"
+          date="Dec 2021 - Jul 2023"
           icon={<img src={Zebra} alt="Custom Icon" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
           iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
@@ -73,7 +73,7 @@ function WorkTimelineComponent() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#11181f', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
-          date="July 2021 - Dec 2021"
+          date="Jul 2021 - Dec 2021"
           icon={<img src={Zebra} alt="Custom Icon" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
           iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
@@ -93,7 +93,7 @@ function WorkTimelineComponent() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#11181f', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
-          date="Jan 2021 - July 2021"
+          date="Jan 2021 - Jul 2021"
           icon={<img src={Zebra} alt="Custom Icon" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
           iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
