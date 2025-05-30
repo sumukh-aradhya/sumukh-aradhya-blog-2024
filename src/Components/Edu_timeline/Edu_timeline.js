@@ -13,7 +13,7 @@ function EduTimelineComponent() {
           className="vertical-timeline-element--edu"
           contentStyle={{ background: '#11181f', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
-          date="Aug 2023 - present"
+          date="Aug 2023 - May 2025"
           icon={<img className='logo-edu-timeline' src={SJSU} alt="Custom Icon" style={{ width: '50%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
           iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
