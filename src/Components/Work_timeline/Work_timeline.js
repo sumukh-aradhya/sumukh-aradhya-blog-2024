@@ -5,11 +5,29 @@ import './Work_timeline.css';
 import Inhabitr from '../../assets/images/inhabitr2.jpg';
 import Zebra from '../../assets/images/zebra2.jpg';
 import SJSU from '../../assets/images/sjsu.png';
+import Onetera from '../../assets/images/onetera.jpg';
 
 function WorkTimelineComponent() {
   return (
     <div>
       <VerticalTimeline>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: '#11181f', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid  #11181f' }}
+        date="Jun 2025 - Present"
+        icon={<img className='logo-work-timeline' src={Onetera} alt="Custom Icon" style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '10%' }} />}
+        iconStyle={{ background: '#fff', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+      >
+        <h3 className="vertical-timeline-element-title">Software Engineer - AI</h3>
+        <h4 className="vertical-timeline-element-subtitle">Onetera Technologies Inc.</h4>
+        <h5 className="vertical-timeline-element-subtitle">Los Angeles, California</h5>
+        <p>
+          <ul>
+            <li>Working on LLM traceability, AI automation pipelines, inference quality optimization, plus some full-stack work for good measure. Startup life surely keeps me juggling hats, learning/delivering solutions at warp speed, and occasionally wondering which day it is (in the best way)</li>
+          </ul>
+        </p>
+      </VerticalTimelineElement>
       <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{ background: '#11181f', color: '#fff' }}

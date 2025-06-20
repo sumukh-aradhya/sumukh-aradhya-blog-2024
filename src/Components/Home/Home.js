@@ -139,7 +139,7 @@ function Home() {
                 <h2 className="h2-card-text-about">OVERVIEW</h2>
                 <p className="p-card-text-about">I am a technology enthusiast with a Master's in Computer Science from San Jose State University. I am a skilled Machine Learning Engineer, currently working on various AI tools and solutions at <a href='https://www.onetera.com' target='_blank' rel="noopener noreferrer" className="plain-link">Onetera</a>. Passionate about innovation, I am always eager to meet new people, collaborate, learn and work on new ideas in the realm of AI and Machine Learning.</p>
                 <h5 className='p-card-text-about-addn-details'>
-                  San Jose, California
+                  Los Angeles, California
                 </h5>
                 {/* Social Icons with Font Awesome */}
                 <div className="social-icons">
