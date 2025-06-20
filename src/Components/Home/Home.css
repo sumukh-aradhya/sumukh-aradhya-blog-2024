@@ -392,7 +392,11 @@ body {
   }
 
   .plain-link {
-  text-decoration: none;
-  color: inherit;
+  color: white;
   font-weight: bold;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #437f78 100%);
+  background-repeat: no-repeat;
+  background-position: 0 90%;
+  background-size: 100% 2px;
 }
