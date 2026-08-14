@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  /* Inverness — sampled from the fog photograph. One hue, ten steps, one wax accent. */
+  --color-pine: #050807;
+  --color-pine-soft: #0b110d;
+  --color-pine-mid: #141c17;
+  --color-fog-deep: #39443c;
+  --color-fog-dim: #6d7b71;
+  --color-fog: #97a49b;
+  --color-fog-light: #c2cbc2;
+  --color-bone: #edf0ea;
+  --color-wax: #c13e38;
+  --color-hairline: rgb(237 240 234 / 0.08);
+
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", monospace;
+
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  background: var(--color-pine);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-fog-deep) transparent;
+}
+
+body {
+  background: var(--color-pine);
+  color: var(--color-bone);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-wax);
+  color: var(--color-pine);
+}
+
+/* Evidence label — the mono voice of the site. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-fog);
+}
+
+.label-dim {
+  color: var(--color-fog-dim);
+}
+
+/* Wax dot — marks what is alive. */
+.wax-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--color-wax);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
