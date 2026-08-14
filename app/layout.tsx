@@ -18,15 +18,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sumukharadhya.in"),
-  title: "Sumukh Naveen Aradhya",
+  title: "Sumukh Aradhya",
   description:
     "Lead engineer at Onetera. I build systems that ship without me.",
   openGraph: {
-    title: "Sumukh Naveen Aradhya",
+    title: "Sumukh Aradhya",
     description:
       "Lead engineer at Onetera. I build systems that ship without me.",
     url: "https://www.sumukharadhya.in",
-    siteName: "Sumukh Naveen Aradhya",
+    siteName: "Sumukh Aradhya",
     images: ["/images/fog-inverness.jpg"],
     locale: "en_US",
     type: "website",

@@ -3,7 +3,7 @@
 // The design system (serif prose, mono evidence) already accommodates them.
 
 export const statement = {
-  kicker: "SUMUKH NAVEEN ARADHYA · LOS ANGELES",
+  kicker: "SUMUKH ARADHYA · LOS ANGELES",
   headline: "I build systems that ship without me.",
   sub: "LEAD ENGINEER AT ONETERA, REPORTING TO THE CEO · PUBLISHED LLM RESEARCHER · LEADS TECHNICAL DISCUSSIONS WITH CLIENTS",
   hint: "THE EVIDENCE FOLLOWS",
@@ -182,4 +182,4 @@ export const closing = {
   ],
 };
 
-export const colophon = ["© 2026 SUMUKH NAVEEN ARADHYA"];
+export const colophon = ["© 2026 SUMUKH ARADHYA"];

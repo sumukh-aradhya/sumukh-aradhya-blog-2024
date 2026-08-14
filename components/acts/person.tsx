@@ -61,7 +61,7 @@ export function Person() {
           <div className="relative aspect-[3/4] w-40 md:w-full md:max-w-[220px]">
             <Image
               src="/images/portrait.jpg"
-              alt="Sumukh Naveen Aradhya"
+              alt="Sumukh Aradhya"
               fill
               sizes="220px"
               className="object-cover brightness-[0.9] saturate-[0.85]"
