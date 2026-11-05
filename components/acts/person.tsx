@@ -34,7 +34,7 @@ export function Person() {
         </Reveal>
         <div
           data-lenis-prevent
-          className="-mx-6 mt-10 flex snap-x gap-4 overflow-x-auto overscroll-x-contain px-6 pb-6 md:-mx-[12vw] md:px-[12vw]"
+          className="no-scrollbar -mx-6 mt-10 flex snap-x gap-4 overflow-x-auto overscroll-x-contain px-6 pb-6 md:-mx-[12vw] md:px-[12vw]"
         >
           {gallery.map((photo, i) => (
             <figure key={`${photo.src}-${i}`} className="shrink-0 snap-start">

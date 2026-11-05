@@ -52,6 +52,15 @@ body {
   color: var(--color-fog-dim);
 }
 
+/* Horizontal strips scroll by drag / trackpad / touch; the native bar is noise. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Wax dot — marks what is alive. */
 .wax-dot {
   display: inline-block;
