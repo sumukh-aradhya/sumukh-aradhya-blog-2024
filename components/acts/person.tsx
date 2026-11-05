@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { now, gallery, closing, colophon } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
@@ -20,7 +21,16 @@ export function Person() {
             <div key={row.label} className="grid grid-cols-12 gap-4">
               <p className="label col-span-4 md:col-span-2">{row.label}</p>
               <p className="col-span-8 font-mono text-sm text-fog-light md:col-span-10">
-                {row.value}
+                {row.href ? (
+                  <Link
+                    href={row.href}
+                    className="underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-wax"
+                  >
+                    {row.value}
+                  </Link>
+                ) : (
+                  row.value
+                )}
               </p>
             </div>
           ))}

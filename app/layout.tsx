@@ -3,7 +3,6 @@ import { Newsreader, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Cursor } from "@/components/cursor";
-import { Nav } from "@/components/nav";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -45,7 +44,6 @@ export default function RootLayout({
       <body>
         <Providers>
           <Cursor />
-          <Nav />
           {children}
         </Providers>
       </body>

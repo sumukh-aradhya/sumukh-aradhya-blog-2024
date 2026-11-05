@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useMotionValue, useSpring } from "motion/react";
 
 // One signature interaction: a wax dot that trails the pointer and
@@ -9,6 +10,8 @@ export function Cursor() {
   const [enabled, setEnabled] = useState(false);
   const [visible, setVisible] = useState(false);
   const [active, setActive] = useState(false);
+  // The Lab's one live colour is the orb's amber; everywhere else it is wax.
+  const inLab = usePathname().startsWith("/lab");
 
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
@@ -47,7 +50,13 @@ export function Cursor() {
         opacity: visible ? 1 : 0,
         width: active ? 28 : 6,
         height: active ? 28 : 6,
-        backgroundColor: active ? "rgba(193, 62, 56, 0.25)" : "#c13e38",
+        backgroundColor: inLab
+          ? active
+            ? "rgba(240, 190, 135, 0.25)"
+            : "#f0be87"
+          : active
+            ? "rgba(193, 62, 56, 0.25)"
+            : "#c13e38",
       }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
     />

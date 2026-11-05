@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { useLenis } from "lenis/react";
 
@@ -52,6 +53,9 @@ export function Nav() {
               {item.label}
             </button>
           ))}
+          <Link href="/lab" className="label transition-colors duration-200 hover:text-bone">
+            LAB
+          </Link>
         </nav>
       </div>
     </motion.header>

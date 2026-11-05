@@ -148,6 +148,7 @@ export const now = {
   date: "AUG 2026",
   cadence: "UPDATED MONTHLY",
   rows: [
+    { label: "BUILDING", value: "the lab, one hard idea at a time", href: "/lab" },
     { label: "LISTENING", value: "R&B, on repeat" },
     { label: "READING", value: "simulation theory, with appropriate suspicion" },
     { label: "COOKING", value: "thai curry pasta, accidental but repeatable" },

@@ -1,0 +1,641 @@
+/* The Lab. Same mono voice as the rest of the site, its own light. */
+
+html:has(.lab),
+body:has(.lab) {
+  background: #05090f;
+}
+
+.lab {
+  --base: #05090f;
+  --ivory: #f0eee9;
+  --mist: #b4bcc4;
+  --dim: #7d8791;
+  --amber: #f0be87;
+  --edge: rgb(225 235 244 / 0.13);
+  /* Grows on very wide screens so header, hero and sections share one edge. */
+  --gutter: max(clamp(20px, 5.4vw, 96px), calc((100vw - 1510px) / 2));
+  /* The art's cover box, for anything placed in image coordinates outside it. */
+  --fx: 0.72;
+  --art-h: max(100svh, 720px);
+  --art-w: max(100vw, calc(var(--art-h) * 1672 / 941));
+
+  position: relative;
+  overflow-x: clip;
+  min-height: 100svh;
+  background: var(--base);
+  color: var(--ivory);
+  font-family: var(--font-lab-sans), system-ui, sans-serif;
+  /* Everything in the Lab is lowercase. Delete this line, and the
+     text-transform on .lab .label and the input, to undo it. */
+  text-transform: lowercase;
+}
+
+.lab .label {
+  color: var(--mist);
+  text-transform: inherit;
+  letter-spacing: 0.1em;
+}
+.lab .label-dim {
+  color: var(--dim);
+}
+
+.lab h1,
+.lab h2,
+.lab h3 {
+  font-family: var(--font-lab-display), Georgia, serif;
+  font-weight: 400;
+}
+
+.lab a:focus-visible,
+.lab-orb:focus-visible {
+  outline: 1px solid var(--amber);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ─── Header ─── */
+
+.lab-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+  padding: clamp(18px, 3.6vh, 36px) var(--gutter) 0;
+}
+
+/* Same mono as the home page nav, so it reads as the same site. */
+.lab-brand {
+  display: flex;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.lab-brand a {
+  transition: color 200ms;
+}
+.lab-brand a:hover {
+  color: var(--amber);
+}
+.lab-brand span {
+  margin-inline: 0.15em;
+  color: var(--dim);
+}
+
+/* ─── Hero ─── */
+
+.lab-hero {
+  position: relative;
+  min-height: max(72svh, 590px);
+  scroll-margin-top: 100px;
+}
+
+/* The stage reproduces object-fit: cover with CSS alone, so art, curve and orb
+   share one coordinate system at every size, with or without JavaScript. */
+.lab-art {
+  --fy: 0.5;
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 0;
+  height: var(--art-h);
+  overflow: hidden;
+  container-type: size;
+}
+.lab-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, transparent 62%, var(--base) 99%),
+    linear-gradient(to right, rgb(5 9 15 / 0.72) 0%, rgb(5 9 15 / 0.34) 30%, transparent 48%),
+    linear-gradient(to bottom, rgb(5 9 15 / 0.5), transparent 16%);
+}
+.lab-stage {
+  --w: max(100cqw, calc(100cqh * 1672 / 941));
+  position: absolute;
+  width: var(--w);
+  aspect-ratio: 1672 / 941;
+  left: calc((100cqw - var(--w)) * var(--fx));
+  top: calc((100cqh - var(--w) * 941 / 1672) * var(--fy));
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lab-art-image {
+  filter: saturate(0.66) brightness(0.92);
+}
+.lab-curve {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.lab-curve path {
+  fill: none;
+  stroke: #ffe9cf;
+  stroke-opacity: 0.6;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.lab-orb {
+  position: absolute;
+  z-index: 3; /* above the ::after scrims, which live on the parent */
+  width: 2.5%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 9999px;
+  cursor: grab;
+  touch-action: none;
+  background: radial-gradient(circle at 42% 38%, #fffaf2 0%, #ffe6c8 46%, #f3b878 100%);
+  box-shadow:
+    0 0 14px 3px rgb(255 214 165 / 0.75),
+    0 0 46px 14px rgb(240 170 100 / 0.28);
+}
+.lab-orb::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 9999px;
+}
+.lab-orb:active {
+  cursor: grabbing;
+}
+
+/* Sits in the dark interior of the basin, in image coordinates, and leaves
+   for good the moment someone takes the hint. */
+.lab-hint {
+  position: absolute;
+  z-index: 2;
+  left: calc((100vw - var(--art-w)) * var(--fx) + var(--art-w) * 0.676);
+  top: calc((var(--art-h) - var(--art-w) * 941 / 1672) * 0.5 + var(--art-w) * 941 / 1672 * 0.3);
+  translate: -50% 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 400ms;
+}
+.lab-hint[data-touched="true"] {
+  opacity: 0;
+}
+@media (scripting: none) {
+  .lab-hint,
+  .lab-bar {
+    display: none;
+  }
+}
+
+.lab-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  max-width: 570px;
+  margin-left: var(--gutter);
+  padding-top: clamp(112px, 19svh, 180px);
+  pointer-events: none;
+}
+.lab-hero-copy > * {
+  pointer-events: auto;
+}
+.lab-hero-copy h1 {
+  font-size: clamp(2.75rem, 4.25vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.012em;
+  width: fit-content;
+}
+.lab-line {
+  display: block;
+}
+.lab-hero-copy em {
+  font-style: italic;
+  padding-right: 0.06em;
+}
+.lab-hero-body {
+  margin-top: 1.4rem;
+  max-width: 24rem;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  text-wrap: balance;
+  color: rgb(240 238 233 / 0.84);
+}
+.lab-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 1.9rem;
+  min-height: 44px;
+  font-size: 0.9375rem;
+  color: rgb(240 238 233 / 0.9);
+}
+.lab-action-circle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(240 238 233 / 0.55);
+  border-radius: 9999px;
+  transition:
+    border-color 200ms,
+    color 200ms,
+    translate 300ms var(--ease-settle);
+}
+.lab-action:hover .lab-action-circle {
+  border-color: var(--amber);
+  color: var(--amber);
+  translate: 0 3px;
+}
+
+/* ─── Studies ─── */
+
+.lab-studies {
+  position: relative;
+  z-index: 1;
+  padding-inline: var(--gutter);
+}
+
+/* While searching, the page stays tall enough that the bar never gets yanked
+   away from under someone typing as the results shrink. */
+.lab-finder[data-searching="true"] {
+  min-height: 100svh;
+}
+.lab-sentinel {
+  height: 1px;
+}
+
+/* One search box. It rests above the studies and pins to the top on scroll. */
+.lab-bar {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  margin-inline: calc(var(--gutter) * -1);
+  padding: 12px var(--gutter);
+  border-bottom: 1px solid transparent;
+  transition:
+    background 250ms,
+    border-color 250ms;
+}
+.lab-bar[data-stuck="true"] {
+  background: rgb(5 9 15 / 0.93);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--edge);
+}
+/* Only exists once the bar has pinned. Never clipped: it always takes its full width. */
+.lab-bar-home {
+  display: none;
+  flex: none;
+  margin-right: clamp(16px, 3vw, 48px);
+}
+.lab-bar[data-stuck="true"] .lab-bar-home {
+  display: block;
+}
+.lab-search {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 52px;
+  padding-inline: 2px;
+  color: var(--dim);
+  border-bottom: 1px solid rgb(225 235 244 / 0.28);
+  transition:
+    color 200ms,
+    border-color 200ms;
+}
+.lab-search:focus-within {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+.lab-search svg {
+  flex: none;
+}
+.lab-search input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  background: transparent;
+  color: var(--ivory);
+  color-scheme: dark;
+  /* 16px or more, or iOS zooms the page on focus. */
+  font-family: var(--font-lab-display), Georgia, serif;
+  font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+  text-transform: inherit;
+  outline: none;
+}
+.lab-search input::placeholder {
+  color: var(--dim);
+  opacity: 1;
+}
+.lab-search kbd {
+  display: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--edge);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--dim);
+}
+@media (hover: hover) and (pointer: fine) {
+  .lab-search kbd {
+    display: grid;
+  }
+  .lab-search:focus-within kbd {
+    display: none;
+  }
+}
+
+.lab-finder-heading {
+  margin-top: clamp(40px, 7vh, 72px);
+  font-size: clamp(1.875rem, 2.6vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(32px, 3vw, 48px) clamp(18px, 1.7vw, 28px);
+  margin-top: clamp(20px, 3vh, 32px);
+}
+
+.lab-card {
+  display: block;
+  min-width: 0;
+}
+.lab-card-art {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  background: #0a1017;
+}
+.lab-card-art img {
+  object-fit: cover;
+  filter: saturate(0.72) brightness(0.86);
+  transition:
+    scale 600ms var(--ease-settle),
+    filter 600ms var(--ease-settle);
+}
+.lab-card:hover .lab-card-art img {
+  scale: 1.015;
+  filter: saturate(0.86) brightness(0.98);
+}
+.lab-card-head {
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 24px 28px 56px;
+  background: linear-gradient(to bottom, rgb(5 9 15 / 0.62), transparent);
+}
+.lab-card-topic {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--mist);
+}
+/* The one thing a study explains, named plainly. */
+.lab-pill {
+  display: inline-block;
+  padding: 0.35em 0.85em;
+  border: 1px solid rgb(240 190 135 / 0.5);
+  border-radius: 9999px;
+  background: rgb(5 9 15 / 0.55);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--amber);
+  white-space: nowrap;
+}
+.lab-card-art > .lab-pill {
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.lab-card-soon .lab-card-art img,
+.lab-card-soon:hover .lab-card-art img {
+  scale: 1;
+  filter: saturate(0.5) brightness(0.62);
+}
+.lab-card-title {
+  margin-top: 0.8rem;
+  font-size: clamp(1.5rem, 2.1vw, 2.25rem);
+  line-height: 1.08;
+}
+.lab-card-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem 2px 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--mist);
+}
+
+/* Search results are text, so a study never needs art to be found. */
+.lab-results {
+  margin-top: clamp(24px, 4vh, 40px);
+}
+.lab-results ul {
+  margin-top: 1rem;
+  border-top: 1px solid var(--edge);
+}
+.lab-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr) 11rem 8rem;
+  gap: 8px clamp(18px, 2vw, 32px);
+  align-items: baseline;
+  padding: 1.25rem 2px;
+  border-bottom: 1px solid var(--edge);
+}
+.lab-row-title {
+  font-family: var(--font-lab-display), Georgia, serif;
+  font-size: clamp(1.375rem, 1.8vw, 1.625rem);
+  line-height: 1.15;
+  transition: color 200ms;
+}
+.lab-row-live:hover .lab-row-title {
+  color: var(--amber);
+}
+.lab-row-description {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--mist);
+}
+
+/* ─── Footer ─── */
+
+.lab-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2.5rem;
+  margin-top: clamp(80px, 14vh, 140px);
+  padding: 2rem var(--gutter) 2.5rem;
+}
+.lab-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: 44px;
+  font-family: var(--font-lab-display), Georgia, serif;
+  font-size: 1.375rem;
+  transition: color 200ms;
+}
+.lab-home-link:hover {
+  color: var(--amber);
+}
+
+/* ─── Motion ─── */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* CSS only, so the copy is never hidden if JavaScript does not run. */
+  .lab-rise {
+    animation: lab-rise 700ms var(--ease-settle) both;
+  }
+  .lab-rise-2 {
+    animation-delay: 160ms;
+  }
+  .lab-rise-3 {
+    animation-delay: 300ms;
+  }
+}
+@keyframes lab-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* ─── Small desktop and landscape tablet ─── */
+
+@media (max-width: 1099px) {
+  .lab-hero-body {
+    max-width: 22rem;
+  }
+  .lab-card-head {
+    padding: 18px 18px 40px;
+  }
+  .lab-card-art > .lab-pill {
+    left: 18px;
+    bottom: 18px;
+  }
+  .lab-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  }
+  .lab-row-meta {
+    grid-row: 2;
+  }
+}
+
+/* ─── Portrait tablet and phone: the hero stacks, it is not the desktop made small ─── */
+
+@media (max-width: 899px) {
+  .lab {
+    --fx: 0.61;
+  }
+  .lab-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .lab-hero-copy {
+    order: 1;
+    max-width: none;
+    margin-left: 0;
+    padding: clamp(96px, 14vw, 140px) var(--gutter) 0;
+  }
+  .lab-hero-copy h1 {
+    font-size: clamp(2.75rem, 13vw, 4.5rem);
+  }
+  .lab-hero-body {
+    max-width: 30rem;
+    font-size: clamp(1.0625rem, 2.4vw, 1.1875rem);
+  }
+  /* Scale the art by height so the whole curve fits across a narrow screen. */
+  .lab-art {
+    order: 2;
+    position: relative;
+    inset: auto;
+    height: clamp(300px, 100vw, 560px);
+    margin-top: 0.5rem;
+  }
+  .lab-art::after {
+    background: linear-gradient(
+      to bottom,
+      var(--base) 0%,
+      transparent 22%,
+      transparent 74%,
+      var(--base) 100%
+    );
+  }
+  .lab-orb {
+    width: 3.2%;
+  }
+  /* Pull up into the empty foot of the art, so the hint stays by the orb. */
+  .lab-hint {
+    order: 3;
+    position: relative;
+    inset: auto;
+    translate: none;
+    margin-top: calc(clamp(300px, 100vw, 560px) * -0.3);
+    padding: 0 var(--gutter);
+    text-align: center;
+  }
+  .lab-studies {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Shares the bar with the brand once pinned, so it has to fit beside it. */
+  .lab-bar[data-stuck="true"] input {
+    font-size: 1.0625rem;
+  }
+  .lab-bar[data-stuck="true"] .lab-search {
+    gap: 8px;
+  }
+  @media (max-width: 359px) {
+    .lab-bar[data-stuck="true"] input {
+      font-size: 1rem;
+    }
+  }
+  .lab-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+  .lab-card-art {
+    aspect-ratio: 1 / 0.9;
+  }
+  .lab-card-head {
+    padding: 22px 24px 48px;
+  }
+  .lab-card-title {
+    font-size: 1.875rem;
+  }
+  .lab-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lab-row-meta {
+    grid-row: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-hint,
+  .lab-bar,
+  .lab-action-circle,
+  .lab-card-art img {
+    transition: none;
+  }
+}
