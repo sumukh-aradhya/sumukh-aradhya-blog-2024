@@ -46,6 +46,21 @@ export function Chapters() {
                     {chapter.body}
                   </p>
                   <p className="label mt-8 text-wax">{chapter.metric}</p>
+                  {chapter.links && (
+                    <div className="mt-6 flex flex-wrap gap-8">
+                      {chapter.links.map((link) => (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="label transition-colors duration-200 hover:text-wax"
+                        >
+                          {link.label} ↗
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </Reveal>
               </div>
 

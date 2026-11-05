@@ -118,8 +118,8 @@ export function ResearchDiagram() {
       {/* Contrastive split: positives kept, negatives pushed away. */}
       <path d="M254 154 C286 154 286 96 316 96" fill="none" stroke={fogDeep} strokeDasharray="4 5" />
       <path d="M254 182 C286 182 286 240 316 240" fill="none" stroke={fogDeep} strokeDasharray="4 5" />
-      <text x={316} y={84} style={labelStyle}>POSITIVE CTX</text>
-      <text x={316} y={228} style={labelStyle}>NEGATIVE CTX</text>
+      <text x={282} y={84} style={labelStyle}>POSITIVE CTX</text>
+      <text x={282} y={228} style={labelStyle}>NEGATIVE CTX</text>
       <line x1={316} y1={96} x2={376} y2={96} stroke={fogDeep} strokeDasharray="4 5" />
       <line x1={316} y1={240} x2={376} y2={240} stroke={fogDeep} strokeDasharray="2 6" />
 
@@ -128,8 +128,8 @@ export function ResearchDiagram() {
       <text x={386} y={106} style={{ ...labelStyle, fill: wax }}>CONTEXT</text>
 
       <path d="M416 124 L416 168 L456 168" fill="none" stroke={fog} />
-      <text x={400} y={196} style={labelStyle}>LLAMA-3 · 3B</text>
-      <text x={330} y={310} style={labelStyle}>QDYLORA · FRACTION OF FULL FT MEMORY</text>
+      <text x={376} y={196} style={labelStyle}>LLAMA-3 · 3B</text>
+      <text x={30} y={310} style={labelStyle}>QDYLORA · FRACTION OF FULL FT MEMORY</text>
     </Frame>
   );
 }

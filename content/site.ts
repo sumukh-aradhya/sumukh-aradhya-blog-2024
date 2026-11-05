@@ -36,6 +36,7 @@ export type Chapter = {
   body: string;
   metric: string;
   note: string;
+  links?: { label: string; href: string }[];
   diagram: "orchestrator" | "factory" | "provingGround" | "research";
 };
 
@@ -78,6 +79,10 @@ export const chapters: Chapter[] = [
     body: "Fine-tuned Llama-3 3B with QDyLoRA to near state-of-the-art code-review performance at a fraction of full fine-tuning memory cost, then designed a contrastive RAG framework for context compression that improved inference quality on open-source code-review benchmarks.",
     metric: "NEAR-SOTA AT 3B PARAMETERS",
     note: "A 3B model on a grad-student GPU budget. The constraint turned out to be the feature.",
+    links: [
+      { label: "SPRINGER", href: "https://link.springer.com/chapter/10.1007/978-3-032-14107-1_31" },
+      { label: "IEEE XPLORE", href: "https://ieeexplore.ieee.org/abstract/document/11676956" },
+    ],
     diagram: "research",
   },
 ];
@@ -179,6 +184,7 @@ export const closing = {
     { label: "EMAIL", href: "mailto:sumukhnaveenaradhya@gmail.com" },
     { label: "GITHUB", href: "https://github.com/sumukh-aradhya" },
     { label: "LINKEDIN", href: "https://www.linkedin.com/in/sumukh-n-aradhya" },
+    { label: "GOOGLE SCHOLAR", href: "https://scholar.google.com/citations?user=Lrl2DLwAAAAJ&hl=en" },
   ],
 };
 

@@ -72,7 +72,7 @@ export function Person() {
           <p className="max-w-[24ch] text-[clamp(1.6rem,3.2vw,2.75rem)] leading-[1.2]">
             {closing.line}
           </p>
-          <div className="mt-10 flex gap-8">
+          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
             {closing.links.map((link) => (
               <a
                 key={link.label}
